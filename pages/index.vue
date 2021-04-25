@@ -2,9 +2,7 @@
   <div class="container">
     <div>
       <Logo />
-      <h1 class="title">
-        portfolio
-      </h1>
+      <h1 class="title">portfolio</h1>
       <div class="links">
         <a
           href="https://nuxtjs.org/"
@@ -23,12 +21,39 @@
           GitHub
         </a>
       </div>
+      <p>{{ name }}</p>
+      <ul class="resultItems">
+        <li class="resultItem" v-for="post in results" :key="post.id">
+          <img :src="post.media_url" class="imgStyle" />
+          <dl class="dataStyle">
+            <dt>
+              <a :href="post.permalink">
+                {{ post.caption }}
+              </a>
+            </dt>
+          </dl>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      results: [],
+      name: 'masu',
+    };
+  },
+  async asyncData({ app }) {
+    const baseUrl = process.env. BASE_URL;
+    const response = await app.$axios.$get(baseUrl);
+    return {
+      results: response.media.data,
+    };
+  },
+};
 </script>
 
 <style>
@@ -42,16 +67,8 @@ export default {}
 }
 
 .title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;
