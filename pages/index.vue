@@ -1,40 +1,18 @@
 <template>
   <div class="container">
     <div>
-      <Logo />
-      <h1 class="title">portfolio</h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-      <ul class="resultItems">
-        <li class="resultItem" v-for="post in results" :key="post.id">
-          <a :href="post.permalink" target="_blank" rel="noopener noreferrer">
-            <img :src="post.media_url" class="imgStyle" />
-          </a>
-        </li>
-      </ul>
+      <Logo></Logo>
+      <Profile />
       <p class="name">{{ name }}</p>
+      <Contact :results="results"></Contact>
       <div class="circle"></div>
     </div>
   </div>
 </template>
 
 <script>
+import Profile from '~/components/Profile.vue'
+import Contact from '~/components/Contact.vue'
 import { TweenMax, Expo, Elastic, gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -42,9 +20,12 @@ if (process.client) {
   gsap.registerPlugin(ScrollTrigger);
 }
 export default {
+  components: {
+    Profile,
+    Contact
+  },
   data() {
     return {
-      results: [],
       name: "masu",
     };
   },
@@ -63,7 +44,7 @@ export default {
     scrollItemA() {
       gsap.to(".name", {
         // 動かしたい要素は".a"
-        x: -500, // 右方向に500動く
+        x: 1100, // 右方向に500動く
         duration: 8, // アニメーションは1秒間
         yoyo: true,
         scrollTrigger: {
@@ -162,7 +143,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
 }
 .title {
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
@@ -211,5 +191,6 @@ ul {
   height: 150px;
   width: 150px;
   border-radius: 50%;
+  margin-top:1000px;
 }
 </style>
