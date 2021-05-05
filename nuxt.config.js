@@ -41,7 +41,12 @@ export default {
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    transpile: ['gsap']
+    transpile: ['gsap'],
+    extend (config, ctx) {
+      if (!!config.module) {
+        config.module.rules.push({ test: /\.(vert|frag)$/i, use: ["raw-loader"] });
+      }
+    }
   },
   env: {
     baseUrl: process.env.BASE_URL || 'http://localhost:3000'
