@@ -3,8 +3,7 @@
     <div>
       <Logo></Logo>
       <Profile />
-      <p class="name">{{ name }}</p>
-      <Contact :results="results"></Contact>
+      <Contact :results="results" />
       <div class="circle"></div>
     </div>
   </div>
@@ -26,7 +25,6 @@ export default {
   },
   data() {
     return {
-      name: "masu",
     };
   },
   async asyncData({ app }) {
@@ -37,25 +35,9 @@ export default {
     };
   },
   mounted() {
-    this.scrollItemA();
     this.redToBlue();
   },
   methods: {
-    scrollItemA() {
-      gsap.to(".name", {
-        // 動かしたい要素は".a"
-        x: 1100, // 右方向に500動く
-        duration: 8, // アニメーションは1秒間
-        yoyo: true,
-        scrollTrigger: {
-          trigger: ".name", // 要素".a"がビューポートに入ったときにアニメーション開始
-          start: "right 350", // アニメーション開始位置
-          end: "top 200", // アニメーション終了位置
-          scrub: true, // アニメーションをスクロール位置にリンクさせる
-          markers: true, // マーカー表示
-        },
-      });
-    },
     redToBlue() {
       TweenMax.to(".circle", 1, {
         x: 550,
@@ -152,10 +134,6 @@ export default {
   font-size: 100px;
   color: #35495e;
   letter-spacing: 1px;
-}
-.name {
-  margin-top: 500px;
-  margin-bottom: 700px;
 }
 .subtitle {
   font-weight: 300;
