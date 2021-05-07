@@ -1,16 +1,12 @@
 <template>
   <div>
-    <Artwork />
     <Nuxt />
   </div>
 </template>
 <script>
-import Artwork from "~/components/Artwork";
 
 export default {
-  components: {
-    Artwork
-  }
+
 }
 </script>
 <style>
