@@ -6,7 +6,7 @@ export default {
   head: {
     title: 'portfolio',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'ja'
     },
     meta: [
       { charset: 'utf-8' },
@@ -21,10 +21,13 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
   ],
-
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    {
+      src:'~plugins/particles.js',
+      ssr: false 
+    }
   ],
+  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -42,11 +45,6 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: ['gsap'],
-    extend (config, ctx) {
-      if (!!config.module) {
-        config.module.rules.push({ test: /\.(vert|frag)$/i, use: ["raw-loader"] });
-      }
-    }
   },
   env: {
     baseUrl: process.env.BASE_URL || 'http://localhost:3000'
