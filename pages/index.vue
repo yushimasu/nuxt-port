@@ -1,30 +1,25 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo></Logo>
-      <Profile />
-      <Contact :results="results" />
-      <div class="circle"></div>
-    </div>
+  <div>
+    <Visual />
+    <Profile />
+    <Contact :results="results" />
   </div>
 </template>
 
 <script>
-import Profile from '~/components/Profile.vue'
-import Contact from '~/components/Contact.vue'
-import { TweenMax, Expo, Elastic, gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Visual from "~/components/Visual/index.vue";
+import Profile from "~/components/Profile/index.vue";
+import Contact from "~/components/Contact/index.vue";
 
-if (process.client) {
-  gsap.registerPlugin(ScrollTrigger);
-}
 export default {
   components: {
+    Visual,
     Profile,
-    Contact
+    Contact,
   },
   data() {
     return {
+
     };
   },
   async asyncData({ app }) {
@@ -35,97 +30,13 @@ export default {
     };
   },
   mounted() {
-    this.redToBlue();
   },
   methods: {
-    redToBlue() {
-      TweenMax.to(".circle", 1, {
-        x: 550,
-        y: 0,
-        backgroundColor: "blue",
-        repeat: 4,
-        yoyo: true,
-      });
-    },
   },
 };
 </script>
 
 <style>
-.close_btn{
-    display: block;
-    width: 20px;
-    height: 20px;
-    position: absolute;
-  right: 0;
-  top:0;
-}
-.close_btn::before, .close_btn::after{
-    content: "";
-    display: block;
-    width: 100%;
-    height: 1px;
-    background-color: #333;
-    transform: rotate(45deg);
-    transform-origin:0% 50%;
-    position: absolute;
-    top: 0;
-    left: 14%;
-}
-
-.close_btn::after{
-    transform: rotate(-45deg);
-    transform-origin:100% 50%;
-    left: auto;
-    right: 14%;
-}
-.popup {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  width: 25%;
-  background-color: #fff;
-  z-index: 1000;
-  opacity: 0;
-  visibility: hidden;
-  transition: .6s;
-  padding: 16px 24px;
-}
-.popup.is-show {
-  opacity: 1;
-  visibility: visible;
-}
-.popup_inner {
-  position: relative;
-}
-.popup_inner::after {
-  content: '';
-  clear: both;
-  display: block;
-}
-.popup_word {
-  font-size: calc(1.3rem + .06vw);
-}
-.popup_button {
-  font-size: calc(1.3rem + .18vw);
-}
-@media(max-width: 768px){
- .popup { 
-   width: 50%;
-  }
-}
-@media(max-width: 425px){
- .popup { 
-   width: 100%;
-  }
-}
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .title {
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -163,12 +74,5 @@ export default {
 }
 ul {
   list-style: none;
-}
-.circle {
-  background-color: orangered;
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
-  margin-top:1000px;
 }
 </style>
