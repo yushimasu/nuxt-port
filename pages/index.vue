@@ -2,7 +2,7 @@
   <div>
     <Visual />
     <Profile />
-    <Works :contents="contents"/>
+    <Works :contents="contents" />
     <Contact :results="results" />
   </div>
 </template>
@@ -23,14 +23,25 @@ export default {
   data() {
     return {};
   },
-  async asyncData({ app }) {
-    const baseUrl = process.env.BASE_URL;
-    const response = await app.$axios.$get(baseUrl);
+  // async asyncData({ app }) {
+  //   // const baseUrl = process.env.BASE_URL;
+  //   const response = await app.$axios.$get(baseUrl);
+  //   const { data } = await app.$axios.get(
+  //     "https://yuppies.microcms.io/api/v1/works",
+  //     {
+  //       headers: { "X-API-KEY": "ff3b2067-ed84-46ac-88ec-39d4896271a0" },
+  //     }
+  //   );
+  //   return {
+  //     results: response.media.data,
+  //     contents: data.contents,
+  //   };
+  // },
+  async asyncData({ $config,app }) {
+    const response = await app.$axios.$get($config.instaAPI);
     const { data } = await app.$axios.get(
-      "https://yuppies.microcms.io/api/v1/works",
-      {
-        headers: { "X-API-KEY": "ff3b2067-ed84-46ac-88ec-39d4896271a0" },
-      }
+      'https://yuppies.microcms.io/api/v1/works',
+      { headers: { 'X-API-KEY': $config.microcmsAPI }}
     );
     return {
       results: response.media.data,

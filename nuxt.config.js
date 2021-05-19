@@ -1,3 +1,4 @@
+require('dotenv').config();
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -46,9 +47,6 @@ export default {
   build: {
     transpile: ['gsap'],
   },
-  env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
-  },
   generate: {
     async routes({ app }) {
       const pages = await app.$axios
@@ -63,5 +61,13 @@ export default {
         )
       return pages
     }
-  }
+  },
+  privateRuntimeConfig: {
+    instaAPI: process.env.INSTA_API,
+    microcmsAPI: process.env.MICRO_CMS_API
+  },
+  publicRuntimeConfig: {
+    instaAPI: process.env.NODE_ENV !== 'production' ? process.env.INSTA_API : undefined,
+    microcmsAPI: process.env.NODE_ENV !== 'production' ? process.env.MICRO_CMS_API : undefined
+  },
 }
