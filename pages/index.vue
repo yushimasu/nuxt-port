@@ -2,6 +2,7 @@
   <div>
     <Visual />
     <Profile />
+    <Works :contents="contents"/>
     <Contact :results="results" />
   </div>
 </template>
@@ -9,30 +10,35 @@
 <script>
 import Visual from "~/components/Visual/index.vue";
 import Profile from "~/components/Profile/index.vue";
+import Works from "~/components/Works/index.vue";
 import Contact from "~/components/Contact/index.vue";
 
 export default {
   components: {
     Visual,
     Profile,
+    Works,
     Contact,
   },
   data() {
-    return {
-
-    };
+    return {};
   },
   async asyncData({ app }) {
     const baseUrl = process.env.BASE_URL;
     const response = await app.$axios.$get(baseUrl);
+    const { data } = await app.$axios.get(
+      "https://yuppies.microcms.io/api/v1/works",
+      {
+        headers: { "X-API-KEY": "ff3b2067-ed84-46ac-88ec-39d4896271a0" },
+      }
+    );
     return {
       results: response.media.data,
+      contents: data.contents,
     };
   },
-  mounted() {
-  },
-  methods: {
-  },
+  mounted() {},
+  methods: {},
 };
 </script>
 

@@ -48,5 +48,20 @@ export default {
   },
   env: {
     baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+  },
+  generate: {
+    async routes({ app }) {
+      const pages = await app.$axios
+        .get('https://yuppies.microcms.io/api/v1/works?limit=100', {
+          headers: { 'X-API-KEY': "ff3b2067-ed84-46ac-88ec-39d4896271a0" }
+        })
+        .then((res) =>
+          res.data.contents.map((content) => ({
+            route: `/${content.id}`,
+            payload: content
+          }))
+        )
+      return pages
+    }
   }
 }
