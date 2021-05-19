@@ -1,3 +1,4 @@
+require('dotenv').config();
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -46,7 +47,27 @@ export default {
   build: {
     transpile: ['gsap'],
   },
-  env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
-  }
+  generate: {
+    async routes({ app }) {
+      const pages = await app.$axios
+        .get('https://yuppies.microcms.io/api/v1/works?limit=100', {
+          headers: { 'X-API-KEY': "ff3b2067-ed84-46ac-88ec-39d4896271a0" }
+        })
+        .then((res) =>
+          res.data.contents.map((content) => ({
+            route: `/${content.id}`,
+            payload: content
+          }))
+        )
+      return pages
+    }
+  },
+  privateRuntimeConfig: {
+    instaAPI: process.env.INSTA_API,
+    microcmsAPI: process.env.MICRO_CMS_API
+  },
+  publicRuntimeConfig: {
+    instaAPI: process.env.NODE_ENV !== 'production' ? process.env.INSTA_API : undefined,
+    microcmsAPI: process.env.NODE_ENV !== 'production' ? process.env.MICRO_CMS_API : undefined
+  },
 }
