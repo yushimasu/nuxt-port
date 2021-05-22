@@ -6,7 +6,6 @@
     <Contact :results="results" />
   </div>
 </template>
-
 <script>
 import Visual from "~/components/Visual/index.vue";
 import Profile from "~/components/Profile/index.vue";
@@ -14,45 +13,23 @@ import Works from "~/components/Works/index.vue";
 import Contact from "~/components/Contact/index.vue";
 
 export default {
-  components: {
-    Visual,
-    Profile,
-    Works,
-    Contact,
-  },
+  components: { Visual, Profile, Works, Contact },
   data() {
     return {};
   },
-  // async asyncData({ app }) {
-  //   // const baseUrl = process.env.BASE_URL;
-  //   const response = await app.$axios.$get(baseUrl);
-  //   const { data } = await app.$axios.get(
-  //     "https://yuppies.microcms.io/api/v1/works",
-  //     {
-  //       headers: { "X-API-KEY": "ff3b2067-ed84-46ac-88ec-39d4896271a0" },
-  //     }
-  //   );
-  //   return {
-  //     results: response.media.data,
-  //     contents: data.contents,
-  //   };
-  // },
-  async asyncData({ $config,app }) {
+  async asyncData({ $config, app }) {
     const response = await app.$axios.$get($config.instaAPI);
-    const { data } = await app.$axios.$get(
-      'https://yuppies.microcms.io/api/v1/works',
-      { headers: { 'X-API-KEY': $config.microcmsAPI }}
-    );
-    return {
-      results: response.media.data,
-      contents: data.contents,
-    };
+    const {
+      data,
+    } = await app.$axios.get("https://yuppies.microcms.io/api/v1/works", {
+      headers: { "X-API-KEY": $config.microcmsAPI },
+    });
+    return { results: response.media.data, contents: data.contents };
   },
   mounted() {},
   methods: {},
 };
 </script>
-
 <style>
 .title {
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
