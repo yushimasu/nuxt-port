@@ -11,15 +11,10 @@
         <span class="profile_skill">Frontend</span>
       </li>
       <li>
-        <h4>PHP</h4>
-        <p>PHPの実務経験を1年半。CMS・既存システムへの機能追加を主に行なっております。<br>フレームワークの理解度はLavavel,Symfonyの基本をおさえているレベル。
+        <h4>PHP（WordPress / ECCUBE）</h4>
+        <p>PHPの実務経験1年。CMS・既存システムへの機能追加を主に行なっております。<br>LINE APIを利用したアプリ開発やGASやGoogle Data Portalを利用して業務用システムの開発も可能です。
         </p>
         <span class="profile_skill">Backend</span>
-      </li>
-      <li>
-        <h4>WordPress / ECCUBE / LINE API / Google</h4>
-        <p>WordPressのオリジナルテーマ開発や機能追加が可能。ECCUBEは2系のカスタマイズを仕事で行なっております。<br>LINE APIを利用したアプリ開発やGASやGoogle Data Portalを利用して業務用システムの開発もできます。</p>
-        <span class="profile_skill">Others</span>
       </li>
       <li>
         <h4>技術ブログ / グルメサイト</h4>

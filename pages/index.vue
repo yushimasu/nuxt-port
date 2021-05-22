@@ -13,18 +13,27 @@ import Works from "~/components/Works/index.vue";
 import Contact from "~/components/Contact/index.vue";
 
 export default {
-  components: { Visual, Profile, Works, Contact },
+  components: {
+    Visual,
+    Profile,
+    Works,
+    Contact,
+  },
   data() {
     return {};
   },
   async asyncData({ $config, app }) {
     const response = await app.$axios.$get($config.instaAPI);
-    const {
-      data,
-    } = await app.$axios.get("https://yuppies.microcms.io/api/v1/works", {
-      headers: { "X-API-KEY": $config.microcmsAPI },
-    });
-    return { results: response.media.data, contents: data.contents };
+    const { data } = await app.$axios.get(
+      "https://yuppies.microcms.io/api/v1/works",
+      {
+        headers: { "X-API-KEY": $config.microcmsAPI },
+      }
+    );
+    return {
+      results: response.media.data,
+      contents: data.contents,
+    };
   },
   mounted() {},
   methods: {},

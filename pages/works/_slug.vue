@@ -7,16 +7,15 @@
 </template>
 
 <script>
-
 export default {
-  async asyncData({ app,params }) {
+  async asyncData({ $config,app,params }) {
     const { data } = await app.$axios.get(
       `https://yuppies.microcms.io/api/v1/works/${params.slug}`,
       {
-        // your-api-key部分は自分のapi-keyに置き換えてください
-        headers: { "X-API-KEY": "ff3b2067-ed84-46ac-88ec-39d4896271a0" },
+        headers: { "X-API-KEY": $config.microcmsAPI },
       }
     )
+    console.log(data)
     return data
   }
 }
