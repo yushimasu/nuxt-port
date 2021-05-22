@@ -15,11 +15,16 @@
           <span class="letters">S</span>
           <span class="letters">H</span>
           <span class="letters">I </span>
-          <span class="letters">&nbsp;</span>
-          <span class="letters">M</span>
-          <span class="letters">A</span>
-          <span class="letters">S</span>
-          <span class="letters">U</span>
+          <span class="letters">&nbsp;</span><br>
+          <span class="letters">P</span>
+          <span class="letters">o</span>
+          <span class="letters">r</span>
+          <span class="letters">t</span>
+          <span class="letters">f</span>
+          <span class="letters">o</span>
+          <span class="letters">l</span>
+          <span class="letters">i</span>
+          <span class="letters">o</span>
         </div>
       </div>
     </div>
@@ -160,8 +165,7 @@ export default {
   top: 40%;
   left: -10%;
   color: #00c58e;
-  font-size: 48px;
-  text-transform: uppercase;
+  font-size: 60px;
   overflow: hidden;
 }
 
