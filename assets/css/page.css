@@ -1,0 +1,128 @@
+/* ヘッダー */
+.page_articles .header {
+  max-width: 1300px;
+  margin: auto;
+}
+.page_articles .header-title {
+  opacity: 1;
+}
+/* セクションレイアウト */
+.page_articles_section {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 50px;
+  color: #222;
+}
+.page_articles_section h2 {
+  text-align: center;
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+.page_articles_section h3 {
+  font-size: 18px;
+}
+.articles_list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.articles_list article {
+  width: 32%;
+}
+.articles_list article:not(:nth-child(3n)) {
+  margin-right: 2%;
+}
+.articles_list article:nth-child(n + 4) {
+  margin-top: 2%;
+}
+/* サムネイル */
+.articles_list article img {
+  max-width: 100%;
+  display: block;
+}
+.articles_list article a {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+/* 日付 */
+.articles_date {
+  font-weight: bold;
+  font-size: 12px;
+}
+/* カテゴリ */
+.articles_category {
+  display: flex;
+}
+.category_label {
+  border-radius: 25px;
+  font-size: 12px;
+  display: block;
+  color: #fff;
+  padding: 2px 8px 1px;
+  font-weight: bold;
+}
+.articles_category span:not(:last-child) {
+  margin-right: 4px;
+}
+.articles_thumbnail {
+  margin-bottom: 10px;
+}
+/* 記事詳細ページ */
+.page_article_detail h2 {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+.page_article_detail {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 50px 100px;
+  color: #222;
+}
+.page_article_detail .article_thumbnail {
+  margin-bottom: 20px;
+}
+.page_article_detail .article_thumbnail img {
+  width: 60%;
+  margin: auto;
+}
+.page_article_detail .article_category {
+  display: flex;
+  margin-bottom: 4px;
+}
+.page_article_detail .article_date {
+  font-size: 12px;
+}
+@media screen and (max-width: 600px) {
+  .page_articles_section {
+    padding: 10% 4%;
+  }
+  .articles_list {
+    display: block;
+  }
+  .articles_list article {
+    width: 100%;
+  }
+  .articles_list article:not(:nth-child(3n)) {
+    margin-right: 0;
+  }
+  .articles_list article:nth-child(n + 4) {
+    margin-top: 0;
+  }
+  .articles_list article:not(:last-child) {
+    margin-bottom: 32px;
+  }
+  /* 詳細ページ */
+  .page_article_detail {
+    padding: 10% 4%;
+  }
+  .page_article_detail h2 {
+    font-size: 24px;
+  }
+  .page_article_detail .article_thumbnail img {
+    width: 100%;
+  }
+  .page_article_detail .article_date {
+    margin-bottom: 30px;
+  }
+}

@@ -1,0 +1,32 @@
+@charset "utf-8";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 16px;
+  font-family: "Avenir", "Avenir Next", "Hiragino Kaku Gothic ProN",
+    "ヒラギノ角ゴ ProN W3", "ヒラギノ角ゴシック", "Hiragino Sans", "Arial",
+    YuGothic, "Yu Gothic", "Yu Gothic UI", sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  color: #fff;
+  line-height: 1.5;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+ul,ol {
+  list-style: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
