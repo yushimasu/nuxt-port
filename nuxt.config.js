@@ -50,7 +50,7 @@ export default {
   },
   generate: {
     async routes($config) {
-      const pages = await axios
+      const pages = await app.$axios
         .get('https://yuppies.microcms.io/api/v1/works/limit=10', {
           headers: { 'X-API-KEY': $config.microcmsAPI }
         })
