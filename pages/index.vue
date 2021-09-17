@@ -21,14 +21,12 @@ export default {
     Articles,
     Contact,
   },
-  async asyncData({ $config, app }) {
+  async asyncData({ $microcms }) {
     const response = await app.$axios.$get($config.instaAPI);
-    const { data } = await app.$axios.get(
-      "https://yuppies.microcms.io/api/v1/works",
-      {
-        headers: { "X-API-KEY": $config.microcmsAPI },
-      }
-    );
+    const data = await $microcms.get({
+      endpoint: "https://yuppies.microcms.io/api/v1/works",
+      queries: { limit: 20 },
+    });
     return {
       results: response.media.data,
       contents: data.contents,
@@ -36,6 +34,6 @@ export default {
   },
   mounted() {
     require("../assets/js/bubble.js");
-  }
+  },
 };
 </script>

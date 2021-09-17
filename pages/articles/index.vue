@@ -38,15 +38,13 @@
 </template>
 <script>
 export default {
-  async asyncData({ $config, app }) {
-    const { data } = await app.$axios.get(
-      `https://yuppies.microcms.io/api/v1/works`,
-      {
-        headers: { "X-API-KEY": $config.microcmsAPI },
-      }
-    );
+  async asyncData({ $microcms }) {
+    const data = await $microcms.get({
+      endpoint: "https://yuppies.microcms.io/api/v1/works",
+      queries: { limit: 20},
+    });
     return {
-      contents: data.contents,
+      contents: data.contents
     };
   },
   mounted() {

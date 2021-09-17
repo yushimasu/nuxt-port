@@ -1,5 +1,3 @@
-import axios from 'axios'
-const { MICRO_CMS_API } = process.env;
 export default {
   target: 'static',
   head: {
@@ -28,8 +26,7 @@ export default {
     '~/plugins/day.js',
   ],
   components: true,
-  buildModules: [
-  ],
+  buildModules: ['nuxt-microcms-module'],
   modules: [
     '@nuxtjs/axios'
   ],
@@ -50,19 +47,11 @@ export default {
     instaAPI: process.env.NODE_ENV !== 'production' ? process.env.INSTA_API : undefined,
     microcmsAPI: process.env.NODE_ENV !== 'production' ? MICRO_CMS_API : undefined,
   },
-  generate: {
-    async routes($config) {
-      const pages = await axios
-        .get('https://yuppies.microcms.io/api/v1/works/limit=10', {
-          headers: { 'X-API-KEY': $config.microcmsAPI }
-        })
-        .then((res) =>
-          res.data.contents.map((content) => ({
-            route: `articles/${content.id}`,
-            payload: content
-          }))
-        )
-      return pages
-    }
+  microcms: {
+    options: {
+      serviceDomain: process.env.SERVICE_DOMAIN,
+      apiKey: process.env.MICRO_CMS_API,
+    },
+    mode: process.env.NODE_ENV === 'production' ? 'server' : 'all',
   }
 }
