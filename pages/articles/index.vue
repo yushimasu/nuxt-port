@@ -45,7 +45,6 @@ export default {
         headers: { "X-API-KEY": $config.microcmsAPI },
       }
     );
-    console.log(data.contents);
     return {
       contents: data.contents,
     };
