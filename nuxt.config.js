@@ -35,6 +35,10 @@ export default {
   },
   build: {
     transpile: ['gsap', 'p5'],
+    babel: {
+      babelrc: false,
+      compact: false
+    }
   },
   privateRuntimeConfig: {
     instaAPI: process.env.INSTA_API,
