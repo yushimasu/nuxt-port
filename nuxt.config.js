@@ -49,7 +49,7 @@ export default {
     microcmsAPI: process.env.NODE_ENV !== 'production' ? process.env.MICRO_CMS_API : undefined,
   },
   generate: {
-    async routes($config) {
+    async routes($config,app) {
       const pages = await app.$axios
         .get('https://yuppies.microcms.io/api/v1/works/limit=10', {
           headers: { 'X-API-KEY': $config.microcmsAPI }
