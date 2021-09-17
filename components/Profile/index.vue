@@ -1,31 +1,32 @@
 <template>
-  <div class="profile">
-    <h2 class="profile_title" id="profile_title">Profile</h2>
-    <p>1998年生まれ。静岡育ち。</p>
-    <p>仕事はPHPでシステム開発してます。好きなのはJavaScript。</p>
-    <p>趣味はクイズとサイクリングと食べることです。</p>
+  <section class="profile section_container">
+    <h2 class="profile_title top_title" id="profile_title">Profile</h2>
+    <p class="profile_lead">1998年生まれ。静岡育ち。<br>
+      仕事でPHPでシステム作ったり、サイトも作ったりしてます。
+    </p>
     <ul class="profile_career">
       <li>
         <h4>HTML / CSS / JavaScript</h4>
-        <p>マークアップが得意です。SCSS、テンプレートエンジン（EJSやPug）などに対応可能。<br>最近はNuxt.jsでSSG、GSAPでアニメーションを実装することにハマってます。</p>
+        <p>3D表現以外ならなんでもできます。最近はgulpで色々と自動化するのにはまってます。</p>
         <span class="profile_skill">Frontend</span>
       </li>
       <li>
-        <h4>PHP（WordPress / ECCUBE）</h4>
-        <p>PHPの実務経験1年。CMS・既存システムへの機能追加を主に行なっております。<br>LINE APIを利用したアプリ開発やGASやGoogle Data Portalを利用して業務用システムの開発も可能です。
-        </p>
+        <h4>PHP / Python</h4>
+        <p>PHPはECCUBE,WordPress,Laravelなど。触れるレベル。もっと早く実装できるようになりたい。</p>
         <span class="profile_skill">Backend</span>
       </li>
       <li>
-        <h4>技術ブログ / グルメサイト</h4>
-        <p>大学時代は名古屋の情報サイトでグルメ記事を書いていました。今はQiitaに備忘録として技術について書いています。</p>
+        <h4>技術 / グルメ</h4>
+        <p>
+          大学時代は名古屋の情報サイトでグルメ記事を書いていました。今はQiitaやポートフォリオサイトに備忘録として技術について書いています。
+        </p>
         <span class="profile_skill">Writing</span>
       </li>
     </ul>
-  </div>
+  </section>
 </template>
 <script>
-import { TweenMax, Expo, Elastic, gsap } from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 if (process.client) {
@@ -54,27 +55,3 @@ export default {
   },
 };
 </script>
-<style>
-.profile{ 
-  padding: 140px;
-}
-.profile_career li {
-  position: relative;
-  padding: 50px 0;
-}
-.profile_career li p {
-  width: 60%;
-}
-.profile_career h4 {
-  font-size: 18px;
-  color: #2f495e;
-}
-.profile_skill {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  color: rgba(0, 197, 142, 0.3);
-  font-size: 80px;
-  z-index: -1;
-}
-</style>
