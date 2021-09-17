@@ -48,7 +48,7 @@ export default {
   publicRuntimeConfig: {
     instaAPI: process.env.NODE_ENV !== 'production' ? process.env.INSTA_API : undefined,
     microcmsAPI: process.env.NODE_ENV !== 'production' ? process.env.MICRO_CMS_API : undefined,
-  }
+  },
   generate: {
     async routes($config) {
       const pages = await axios
