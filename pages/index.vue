@@ -21,7 +21,7 @@ export default {
     Articles,
     Contact,
   },
-  async asyncData({ $microcms }) {
+  async asyncData({ $microcms,app,$config}) {
     const response = await app.$axios.$get($config.instaAPI);
     const data = await $microcms.get({
       endpoint: "https://yuppies.microcms.io/api/v1/works",
