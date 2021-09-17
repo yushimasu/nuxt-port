@@ -1,4 +1,5 @@
 import axios from 'axios'
+const { MICRO_CMS_API } = process.env;
 export default {
   target: 'static',
   head: {
@@ -43,11 +44,11 @@ export default {
   },
   privateRuntimeConfig: {
     instaAPI: process.env.INSTA_API,
-    microcmsAPI: process.env.MICRO_CMS_API,
+    microcmsAPI: MICRO_CMS_API,
   },
   publicRuntimeConfig: {
     instaAPI: process.env.NODE_ENV !== 'production' ? process.env.INSTA_API : undefined,
-    microcmsAPI: process.env.NODE_ENV !== 'production' ? process.env.MICRO_CMS_API : undefined,
+    microcmsAPI: process.env.NODE_ENV !== 'production' ? MICRO_CMS_API : undefined,
   },
   generate: {
     async routes($config) {
