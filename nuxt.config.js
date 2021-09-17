@@ -39,14 +39,6 @@ export default {
       compact: false
     }
   },
-  privateRuntimeConfig: {
-    instaAPI: process.env.INSTA_API,
-    microcmsAPI: MICRO_CMS_API,
-  },
-  publicRuntimeConfig: {
-    instaAPI: process.env.NODE_ENV !== 'production' ? process.env.INSTA_API : undefined,
-    microcmsAPI: process.env.NODE_ENV !== 'production' ? MICRO_CMS_API : undefined,
-  },
   microcms: {
     options: {
       serviceDomain: process.env.SERVICE_DOMAIN,
