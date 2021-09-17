@@ -1,0 +1,76 @@
+@charset "utf-8";
+.text_wrapper .letters,
+h1,
+h2,
+h3,
+.profile_skill {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 140px;
+}
+.header-title {
+  font-size: 14px;
+  font-weight: 900;
+  opacity: 0;
+}
+.top_title {
+  opacity: 0;
+  transform: translateY(5px);
+  font-size: 60px;
+  margin-bottom: 16px;
+}
+.section_container {
+  max-width: 1300px;
+  width: 100%;
+  padding: 100px 140px;
+  margin: auto;
+}
+.category01 {
+  background: #f7c82e;
+}
+.category02 {
+  background: #783f11;
+}
+.category03 {
+  background: #d76000;
+}
+/* バブルアニメーション */
+#defaultCanvas0 {
+  position: fixed;
+  top: 0;
+  z-index: -1;
+}
+.thumbnail_wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background: #fff;
+}
+@media screen and (max-width: 768px) {
+  .header {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+  .section_container {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .header {
+    height: 80px;
+    padding: 0 4%;
+  }
+  .section_container {
+    padding: 10% 4%;
+  }
+  .thumbnail_wrap {
+    min-height: 200px;
+  }
+}

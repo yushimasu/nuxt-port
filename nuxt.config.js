@@ -1,7 +1,5 @@
 export default {
-  // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-  // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'portfolio',
     htmlAttrs: {
@@ -13,33 +11,30 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'preconnect', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Lato:wght@700;900&display=swap' },
     ]
   },
-  // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '@/assets/css/reset',
+    '@/assets/css/common',
+    '@/assets/css/top',
+    '@/assets/css/page'
   ],
   plugins: [
-    {
-      src: '~plugins/particles.js',
-      ssr: false
-    }
+    '~/plugins/day.js',
   ],
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
   ],
-  // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/axios'
   ],
   axios: {
   },
-  // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    transpile: ['gsap'],
+    transpile: ['gsap', 'p5'],
   },
   privateRuntimeConfig: {
     instaAPI: process.env.INSTA_API,
@@ -49,4 +44,19 @@ export default {
     instaAPI: process.env.NODE_ENV !== 'production' ? process.env.INSTA_API : undefined,
     microcmsAPI: process.env.NODE_ENV !== 'production' ? process.env.MICRO_CMS_API : undefined,
   },
+  generate: {
+    async routes($config) {
+      const pages = await axios
+        .get('https://yuppies.microcms.io/api/v1/works/limit=10', {
+          headers: { 'X-API-KEY': $config.microcmsAPI }
+        })
+        .then((res) =>
+          res.data.contents.map((content) => ({
+            route: `articles/${content.id}`,
+            payload: content
+          }))
+        )
+      return pages
+    }
+  }
 }
