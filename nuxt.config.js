@@ -49,7 +49,7 @@ export default {
   microcms: {
     options: {
       serviceDomain: process.env.SERVICE_DOMAIN,
-      apiKey: process.env.MICRO_CMS_API,
+      apiKey: process.env.MICRO_CMS_API
     },
     mode: process.env.NODE_ENV === 'production' ? 'server' : 'all',
   },
