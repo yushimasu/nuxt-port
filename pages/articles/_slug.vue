@@ -31,7 +31,6 @@ export default {
       endpoint: `works/${params.slug}`,
       queries: { limit: 20 },
     });
-    console.log(data);
     return data;
   },
   mounted() {

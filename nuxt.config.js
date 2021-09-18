@@ -51,8 +51,7 @@ export default {
       serviceDomain: process.env.SERVICE_DOMAIN,
       apiKey: process.env.MICRO_CMS_API
     },
-    mode: 'server'
-    // mode: process.env.NODE_ENV === 'production' ? 'server' : 'all',
+    mode: process.env.NODE_ENV === 'production' ? 'server' : 'all'
   },
   generate: {
     async routes() {

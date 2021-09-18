@@ -43,7 +43,6 @@ export default {
       endpoint: "works",
       queries: { limit: 20 },
     });
-    console.log(data);
     return {
       contents: data.contents,
     };
