@@ -27,15 +27,13 @@
 <script>
 export default {
   async asyncData({ app, $config, params }) {
-    const { data } = await app.$axios.get(
+    const {data} = await app.$axios.get(
       `https://yuppies.microcms.io/api/v1/works/${params.slug}`,
       {
         headers: { "X-API-KEY": $config.microAPI },
       }
     );
-    return {
-      contents: data.contents,
-    };
+    return data;
   },
   mounted() {
     require("../../assets/js/bubble.js");
