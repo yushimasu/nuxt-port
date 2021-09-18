@@ -1,3 +1,4 @@
+import axios from 'axios';
 export default {
   target: 'static',
   head: {
@@ -47,13 +48,6 @@ export default {
     instaAPI: process.env.NODE_ENV !== 'production' ? process.env.INSTA_API : undefined,
     microAPI: process.env.NODE_ENV !== 'production' ? process.env.MICRO_CMS_API : undefined
   },
-  // microcms: {
-  //   options: {
-  //     serviceDomain: process.env.SERVICE_DOMAIN,
-  //     apiKey: process.env.MICRO_CMS_API
-  //   },
-  //   mode: process.env.NODE_ENV === 'production' ? 'server' : 'all'
-  // },
   generate: {
     async routes() {
       const pages = await axios
