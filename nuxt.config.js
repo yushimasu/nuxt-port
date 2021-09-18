@@ -1,4 +1,3 @@
-import axios from 'axios'
 export default {
   target: 'static',
   head: {
@@ -59,7 +58,7 @@ export default {
     async routes() {
       const pages = await axios
         .get('https://yuppies.microcms.io/api/v1/works?limit=30', {
-          headers: { 'X-API-KEY': process.env.MICRO_CMS_API }
+          headers: { "X-API-KEY": process.env.MICRO_CMS_API }
         })
         .then((res) =>
           res.data.contents.map((content) => ({
