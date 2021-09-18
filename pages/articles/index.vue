@@ -40,11 +40,12 @@
 export default {
   async asyncData({ $microcms }) {
     const data = await $microcms.get({
-      endpoint: "https://yuppies.microcms.io/api/v1/works",
-      queries: { limit: 20},
+      endpoint: "works",
+      queries: { limit: 20 },
     });
+    console.log(data);
     return {
-      contents: data.contents
+      contents: data.contents,
     };
   },
   mounted() {

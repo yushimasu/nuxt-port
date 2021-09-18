@@ -26,9 +26,9 @@ export default {
     '~/plugins/day.js',
   ],
   components: true,
-  buildModules: ['nuxt-microcms-module'],
   modules: [
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    'nuxt-microcms-module'
   ],
   axios: {
   },
@@ -38,6 +38,12 @@ export default {
       babelrc: false,
       compact: false
     }
+  },
+  privateRuntimeConfig: {
+    instaAPI: process.env.INSTA_API
+  },
+  publicRuntimeConfig: {
+    instaAPI: process.env.NODE_ENV !== 'production' ? process.env.INSTA_API : undefined
   },
   microcms: {
     options: {

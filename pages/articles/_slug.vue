@@ -20,13 +20,6 @@
           <img v-bind:src="image.url" v-bind:alt="title" />
         </div>
         <div v-html="body"></div>
-        <!-- 使用技術 -->
-        <!-- カテゴリ -->
-        <!-- URL -->
-        <!-- 制作期間 -->
-        <!-- 担当部分 -->
-        <!-- 苦労した部分 -->
-        <!-- 感想等 -->
       </article>
     </main>
   </div>
@@ -35,9 +28,10 @@
 export default {
   async asyncData({ $microcms,params }) {
     const data = await $microcms.get({
-      endpoint:  `https://yuppies.microcms.io/api/v1/works/${params.slug}`,
+      endpoint: `works/${params.slug}`,
       queries: { limit: 20 },
     });
+    console.log(data);
     return data;
   },
   mounted() {

@@ -21,10 +21,10 @@ export default {
     Articles,
     Contact,
   },
-  async asyncData({ $microcms,app,$config}) {
+  async asyncData({ app, $config, $microcms}) {
     const response = await app.$axios.$get($config.instaAPI);
     const data = await $microcms.get({
-      endpoint: "https://yuppies.microcms.io/api/v1/works",
+      endpoint: "works",
       queries: { limit: 20 },
     });
     return {
