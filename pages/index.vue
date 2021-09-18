@@ -21,12 +21,12 @@ export default {
     Articles,
     Contact,
   },
-  async asyncData({ app, $config, $microcms}) {
+  async asyncData({ app, $config }) {
     const response = await app.$axios.$get($config.instaAPI);
-    const data = await $microcms.get({
-      endpoint: "works",
-      queries: { limit: 20 },
-    });
+    const { data } = await app.axios.get(
+      "https://yuppies.microcms.io/api/v1/works?limit=30",
+      { headers: { "X-API-KEY": $config.microAPI } }
+    );
     return {
       results: response.media.data,
       contents: data.contents,
