@@ -27,12 +27,13 @@
 <script>
 export default {
   async asyncData({ app, $config, params }) {
-    const {data} = await app.$axios.get(
+    const {data} = await app.$axios.$get(
       `https://yuppies.microcms.io/api/v1/works/${params.slug}`,
       {
         headers: { "X-API-KEY": $config.microAPI },
       }
     );
+    console.log(data);
     return data;
   },
   mounted() {

@@ -39,7 +39,7 @@
 <script>
 export default {
   async asyncData({ app,$config }) {
-    const { data } = await app.$axios.get(
+    const { data } = await app.$axios.$get(
       "https://yuppies.microcms.io/api/v1/works?limit=30",
       { headers: { "X-API-KEY": $config.microAPI } }
     );
