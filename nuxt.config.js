@@ -29,8 +29,12 @@ export default {
   components: true,
   modules: [
     '@nuxtjs/axios',
-    // 'nuxt-microcms-module'
+    '@nuxtjs/google-gtag'
   ],
+  'google-gtag': {
+    id: 'G-M6NNXVP1G3',
+    debug: true
+  },
   axios: {
   },
   build: {
@@ -46,7 +50,10 @@ export default {
   },
   publicRuntimeConfig: {
     instaAPI: process.env.NODE_ENV !== 'production' ? process.env.INSTA_API : undefined,
-    microAPI: process.env.NODE_ENV !== 'production' ? process.env.MICRO_CMS_API : undefined
+    microAPI: process.env.NODE_ENV !== 'production' ? process.env.MICRO_CMS_API : undefined,
+    googleAnalytics: {
+      id: process.env.GOOGLE_ANALYTICS_ID
+    }
   },
   generate: {
     async routes() {
