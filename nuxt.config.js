@@ -33,7 +33,7 @@ export default {
   ],
   'google-gtag': {
     id: 'G-M6NNXVP1G3',
-    debug: true
+    debug: false
   },
   axios: {
   },
