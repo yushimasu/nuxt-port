@@ -24,7 +24,7 @@ export default {
   async asyncData({ app, $config }) {
     const response = await app.$axios.$get($config.instaAPI);
     const {data} = await app.$axios.get(
-      "https://yuppies.microcms.io/api/v1/works?limit=30",
+      "https://yuppies.microcms.io/api/v1/works?limit=3",
       { headers: { "X-API-KEY": $config.microAPI } }
     );
     return {

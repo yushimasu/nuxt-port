@@ -43,7 +43,7 @@ export default {
         },
         scrollTrigger: {
           trigger: "#articles_title",
-          start: "center center",
+          start: 200,
           scrub: true,
         },
       });
