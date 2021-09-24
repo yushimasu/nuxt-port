@@ -115,6 +115,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 16px;
+  height: 200px;
 }
 .post_list li a {
   display: flex;
@@ -188,7 +189,6 @@
   }
   .post_list li span {
     margin-bottom: 8px;
-    min-height: 200px;
   }
   .post_list li:not(:nth-child(3n)) {
     margin-right: 0;
