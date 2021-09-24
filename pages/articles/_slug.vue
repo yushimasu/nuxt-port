@@ -19,7 +19,7 @@
         <div class="article_thumbnail thumbnail_wrap">
           <img v-bind:src="image.url" v-bind:alt="title" />
         </div>
-        <div v-html="body"></div>
+        <div  class="article_content" v-html="body"></div>
       </article>
     </main>
   </div>
