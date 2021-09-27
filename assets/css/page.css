@@ -134,6 +134,21 @@
   color: inherit;
   display: inline-block;
 }
+.article_content pre {
+  overflow-x: scroll;
+    margin: 2em 0;
+    background: #333;
+    color: #fff;
+    line-height: 1.8em;
+    font-size: 0.8em;
+    padding: 1em;
+    border-radius: 10px;
+}
+.article_content code {
+  display: block;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
 /* codepen */
 .article_content iframe {
   width: 100%;
