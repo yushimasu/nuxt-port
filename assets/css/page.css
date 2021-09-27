@@ -27,6 +27,7 @@
 }
 .articles_list article {
   width: 32%;
+  margin-bottom: 2%;
 }
 .articles_list article:not(:nth-child(3n)) {
   margin-right: 2%;
@@ -43,7 +44,7 @@
   display: flex;
   height: 100%;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 /* 日付 */
 .articles_date {
@@ -77,7 +78,7 @@
 .page_article_detail {
   background: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
-  padding: 50px 100px;
+  padding: 6%;
   color: #222;
 }
 .page_article_detail .article_thumbnail {
@@ -96,24 +97,57 @@
   margin-bottom: 12px;
 }
 /* 投稿内容 */
-.article_content h3{
+.article_content {
+  line-height: 1.8;
+  font-size: 15px;
+}
+.article_content {
+  line-height: 1.8;
+  font-size: 15px;
+}
+.article_content ul{
+  padding-left: 20px;
+}
+.article_content li{
+  position: relative;
+  font-weight: bold;
+}
+.article_content li::before{
+  content:"";
+  display:block;
+  position:absolute;
+  left:-1em;
+  top:0.5em;
+  width:6px;
+  height:10px;
+  border-bottom:solid 2px #f79428;
+  border-right:solid 2px #f79428;
+  transform:rotate(45deg);
+}
+.article_content h3 {
   margin-bottom: 12px;
   padding-left: 6px;
   border-left: 4px solid #f79428;
 }
-.article_content p{
-  line-height: 1.8;
-  font-size: 15px;
-}
-.article_content a{
+.article_content a {
   text-decoration: underline;
   color: inherit;
   display: inline-block;
 }
-.article_content img{
+/* codepen */
+.article_content iframe {
+  width: 100%;
+  height: 400px;
+}
+.article_content img {
   width: 60%;
 }
-
+@media screen and (max-width: 768px) {
+  /* 詳細ページ */
+  .page_article_detail {
+    padding: 4%;
+  }
+}
 @media screen and (max-width: 600px) {
   .page_articles_section {
     padding: 10% 4%;
