@@ -116,6 +116,8 @@
   align-items: center;
   margin-bottom: 16px;
   height: 200px;
+  overflow: hidden;
+  margin: auto;
 }
 .post_list li a {
   display: flex;
@@ -132,8 +134,6 @@
 .post_list li img {
   max-width: 100%;
   display: block;
-  overflow: hidden;
-  margin: auto;
 }
 /* Contact */
 .contact_title {
