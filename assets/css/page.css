@@ -69,6 +69,7 @@
 .articles_thumbnail {
   margin-bottom: 10px;
   height: 180px;
+  overflow: hidden;
 }
 /* 記事詳細ページ */
 .page_article_detail h2 {

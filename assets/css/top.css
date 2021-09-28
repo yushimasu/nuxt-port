@@ -132,6 +132,8 @@
 .post_list li img {
   max-width: 100%;
   display: block;
+  overflow: hidden;
+  margin: auto;
 }
 /* Contact */
 .contact_title {
@@ -146,7 +148,7 @@
   width: 50%;
   margin: 0 auto;
 }
-.insta_list li{
+.insta_list li {
   width: 33.3%;
 }
 .contact {
@@ -192,7 +194,7 @@
   }
   .post_list li:not(:nth-child(3n)) {
     margin-right: 0;
-    margin-bottom: 24px;;
+    margin-bottom: 24px;
   }
 
   /* contact */
@@ -202,7 +204,7 @@
   .insta_list {
     width: 100%;
   }
-  .insta_list li{
+  .insta_list li {
     width: 50%;
   }
 }
