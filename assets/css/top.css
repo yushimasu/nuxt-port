@@ -117,7 +117,7 @@
   margin-bottom: 16px;
   height: 200px;
   overflow: hidden;
-  margin: auto;
+  margin-bottom: 16px;
 }
 .post_list li a {
   display: flex;
