@@ -11,7 +11,7 @@
           </NuxtLink>
         </li>
       </ul>
-      <NuxtLink :to="`/articles`" class="post_link">
+      <NuxtLink :to="`/articles/page/1`" class="post_link">
         <span> 記事一覧へ </span>
       </NuxtLink>
   </section>
