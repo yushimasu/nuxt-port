@@ -20,6 +20,7 @@
 }
 .page_articles_section h3 {
   font-size: 18px;
+  margin-bottom: 2px;
 }
 .articles_list {
   display: flex;
@@ -96,6 +97,22 @@
 .page_article_detail .article_date {
   font-size: 12px;
   margin-bottom: 12px;
+}
+.page_back {
+  width: 250px;
+  padding: 10px 10px 8px;
+  margin: auto;
+  background: #fff;
+  border-radius: 25px;
+  text-align:center;
+  transition: 0.4s;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+}
+.page_back:hover{
+  background: #f79428;
+  color: #fff;
 }
 /* 投稿内容 */
 .article_content {

@@ -52,6 +52,34 @@ h3,
   align-items: center;
   background: #fff;
 }
+.pagenation {
+  display: flex;
+  justify-content: center;
+}
+.pagenation span {
+  border-radius: 100%;
+  width: 40px;
+  text-align: center;
+  font-weight: bold;
+  transition: 0.3s;
+  display: block;
+  background: #fff;
+}
+.pagenation_wrap:not(:last-child) {
+  margin-right: 8px;
+}
+.pagenation span:hover {
+  background: #f79428;
+  color: #fff;
+}
+.pagenation span a {
+  display: block;
+  padding: 9px 7px 7px;
+}
+.pagenation span.current {
+  background: #f79428;
+  color: #fff;
+}
 @media screen and (max-width: 768px) {
   .header {
     padding-right: 40px;
