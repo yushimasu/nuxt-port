@@ -20,6 +20,7 @@
           <img v-bind:src="image.url" v-bind:alt="title" />
         </div>
         <div  class="article_content" v-html="body"></div>
+        <NuxtLink :to="`/articles/page/${$route.query.page}`" class="page_back">記事一覧に戻る</NuxtLink>
       </article>
     </main>
   </div>
