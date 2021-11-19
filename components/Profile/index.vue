@@ -7,18 +7,18 @@
     <ul class="profile_career">
       <li>
         <h4>HTML / CSS / JavaScript</h4>
-        <p>3D表現以外ならなんでもできます。最近はgulpで色々と自動化するのにはまってます。</p>
+        <p>3D表現以外のサイトコーディング、アニメーション実装ができます。フレームワークはVue(Nuxt)とReactを少し。</p>
         <span class="profile_skill">Frontend</span>
       </li>
       <li>
         <h4>PHP / Python</h4>
-        <p>PHPはECCUBE,WordPress,Laravelなど。触れるレベル。もっと早く実装できるようになりたい。</p>
+        <p>仕事でPHP開発、API開発,CMS(ECCUBE,WordPress)のカスタマイズをしています。<br>Python,GASも趣味で書いてます。</p>
         <span class="profile_skill">Backend</span>
       </li>
       <li>
         <h4>技術 / グルメ</h4>
         <p>
-          大学時代は名古屋の情報サイトでグルメ記事を書いていました。今はQiitaやポートフォリオサイトに備忘録として技術について書いています。
+          大学時代は名古屋の情報サイトでグルメ記事を書いていました。<br>今はQiitaやポートフォリオサイトに備忘録として技術について書いています。
         </p>
         <span class="profile_skill">Writing</span>
       </li>

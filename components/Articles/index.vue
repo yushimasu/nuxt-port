@@ -35,11 +35,11 @@ export default {
   methods: {
     scrollArticlesList() {
       gsap.to(".resultItem", {
-        duration: 1,
+        duration: 2,
         opacity: 1,
         y: 0,
         stagger: {
-          each: 1,
+          each: 0.5,
         },
         scrollTrigger: {
           trigger: "#articles_title",
