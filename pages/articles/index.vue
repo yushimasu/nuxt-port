@@ -10,7 +10,7 @@
         <h2>Articles</h2>
         <div class="articles_list">
           <article v-for="content in contents" :key="content.id">
-            <NuxtLink :to="`/articles/${content.id}`">
+            <NuxtLink :to="`/articles/${content.id}?page=${current_page}`">
               <div class="articles_thumbnail thumbnail_wrap">
                 <img :src="content.image.url" />
               </div>
@@ -33,7 +33,7 @@
           </article>
         </div>
         <div class="pagenation">
-          <div v-for="(i,key) in pagenation_num" :key="key"> 
+          <div v-for="(i, key) in pagenation_num" :key="key" class="pagenation_wrap">
             <span v-if="current_page == i" class="current">
               <NuxtLink :to="`/articles/page/${i}`">
                 {{ i }}
@@ -50,37 +50,11 @@
     </main>
   </div>
 </template>
-<style scoped>
-.pagenation {
-  display: flex;
-}
-.pagenation span {
-  border-radius: 100%;
-  width: 40px;
-  text-align: center;
-  font-weight: bold;
-  transition: 0.3s;
-  display: block;
-  background: #fff;
-}
-.pagenation span:hover {
-  background: #f79428;
-  color: #fff;
-}
-.pagenation span a {
-  display: block;
-  padding: 9px 7px 7px;
-}
-.pagenation span.current {
-  background: #f79428;
-  color: #fff;
-}
-</style>
 <script>
 export default {
   async asyncData({ app, $config, params }) {
     const page = params.p || "1";
-    const limit = 3;
+    const limit = 6;
     const { data } = await app.$axios.get(
       `https://yuppies.microcms.io/api/v1/works?limit=${limit}&offset=${
         (page - 1) * limit
@@ -92,7 +66,7 @@ export default {
     return {
       contents: data.contents,
       current_page: page,
-      pagenation_num: pagenation_num
+      pagenation_num: pagenation_num,
     };
   },
   mounted() {
