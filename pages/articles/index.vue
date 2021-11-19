@@ -33,7 +33,11 @@
           </article>
         </div>
         <div class="pagenation">
-          <div v-for="(i, key) in pagenation_num" :key="key" class="pagenation_wrap">
+          <div
+            v-for="(i, key) in pagenation_num"
+            :key="key"
+            class="pagenation_wrap"
+          >
             <span v-if="current_page == i" class="current">
               <NuxtLink :to="`/articles/page/${i}`">
                 {{ i }}
@@ -52,6 +56,14 @@
 </template>
 <script>
 export default {
+  head() {
+    return {
+      title: "記事一覧 | YUSHI MASUDA PORTFOLIO",
+      meta:[
+        { hid: 'description', name: 'description', content: '主にHTML,CSSの備忘録をまとめています。JSやPHPはQiitaに書いたりしています。'}
+      ]
+    };
+  },
   async asyncData({ app, $config, params }) {
     const page = params.p || "1";
     const limit = 6;

@@ -13,6 +13,14 @@ import Profile from "~/components/Profile/index.vue";
 import Articles from "~/components/Articles/index.vue";
 
 export default {
+  head() {
+    return {
+      title: "YUSHI MASUDA PORTFOLIO",
+      meta:[
+        { hid: 'description', name: 'description', content: '名古屋でJavaScript,PHPの開発している Webプログラマーです。ポートフォリオへようこそ'}
+      ]
+    };
+  },
   components: {
     Visual,
     Profile,
@@ -20,7 +28,7 @@ export default {
   },
   async asyncData({ app, $config }) {
     const limit = 3;
-    const {data} = await app.$axios.get(
+    const { data } = await app.$axios.get(
       `https://yuppies.microcms.io/api/v1/works?limit=${limit}`,
       { headers: { "X-API-KEY": $config.microAPI } }
     );
