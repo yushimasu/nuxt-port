@@ -8,6 +8,9 @@
     <main class="section_container">
       <section class="page_articles_section">
         <h2>Articles</h2>
+        <p class="articles_lead">
+          知識を定着させるため、仕事を通じて学んだこと、個人開発で詰まった部分を備忘録としてまとめまています。
+        </p>
         <div class="articles_list">
           <article v-for="content in contents" :key="content.id">
             <NuxtLink :to="`/articles/${content.id}?page=${current_page}`">
@@ -59,9 +62,14 @@ export default {
   head() {
     return {
       title: "記事一覧 | YUSHI MASUDA PORTFOLIO",
-      meta:[
-        { hid: 'description', name: 'description', content: '主にHTML,CSSの備忘録をまとめています。JSやPHPはQiitaに書いたりしています。'}
-      ]
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "主にHTML,CSSの備忘録をまとめています。JSやPHPはQiitaに書いたりしています。",
+        },
+      ],
     };
   },
   async asyncData({ app, $config, params }) {

@@ -6,6 +6,12 @@
 .page_articles .header-title {
   opacity: 1;
 }
+.page_articles .articles_lead {
+  font-size: 15px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+  text-align: center;
+}
 /* セクションレイアウト */
 .page_articles_section {
   background: rgba(255, 255, 255, 0.9);
@@ -104,13 +110,13 @@
   margin: 15px auto;
   background: #fff;
   border-radius: 25px;
-  text-align:center;
+  text-align: center;
   transition: 0.4s;
   font-size: 15px;
   letter-spacing: 0.1em;
   font-weight: bold;
 }
-.page_back:hover{
+.page_back:hover {
   background: #f79428;
   color: #fff;
 }
@@ -123,24 +129,24 @@
   line-height: 1.8;
   font-size: 15px;
 }
-.article_content ul{
+.article_content ul {
   padding-left: 20px;
 }
-.article_content li{
+.article_content li {
   position: relative;
   font-weight: bold;
 }
-.article_content li::before{
-  content:"";
-  display:block;
-  position:absolute;
-  left:-1em;
-  top:0.5em;
-  width:6px;
-  height:10px;
-  border-bottom:solid 2px #f79428;
-  border-right:solid 2px #f79428;
-  transform:rotate(45deg);
+.article_content li::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -1em;
+  top: 0.5em;
+  width: 6px;
+  height: 10px;
+  border-bottom: solid 2px #f79428;
+  border-right: solid 2px #f79428;
+  transform: rotate(45deg);
 }
 .article_content h3 {
   margin-bottom: 12px;
@@ -154,13 +160,13 @@
 }
 .article_content pre {
   overflow-x: scroll;
-    margin: 2em 0;
-    background: #333;
-    color: #fff;
-    line-height: 1.8em;
-    font-size: 0.8em;
-    padding: 1em;
-    border-radius: 10px;
+  margin: 2em 0;
+  background: #333;
+  color: #fff;
+  line-height: 1.8em;
+  font-size: 0.8em;
+  padding: 1em;
+  border-radius: 10px;
 }
 .article_content code {
   display: block;
@@ -212,5 +218,8 @@
   }
   .page_article_detail .article_date {
     margin-bottom: 30px;
+  }
+  .page_articles .articles_lead {
+    text-align: left;
   }
 }

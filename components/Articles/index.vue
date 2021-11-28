@@ -3,7 +3,7 @@
     <h2 class="articles_title top_title" id="articles_title">Articles</h2>
       <ul class="post_list" ref="post_list">
         <li class="resultItem" v-for="content in contents" :key="content.id">
-          <NuxtLink :to="`/articles/${content.id}`">
+          <NuxtLink :to="`/articles/${content.id}?page=1`">
             <span>
               <img :src="content.image.url" />
             </span>
